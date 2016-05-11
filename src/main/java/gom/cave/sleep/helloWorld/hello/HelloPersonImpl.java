@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class HelloPersonImpl implements HelloPerson{
 
-    @Value("허윤호")
+    @Value("sleepbear")
     private String name;
     @Autowired
     private Hello hello;
