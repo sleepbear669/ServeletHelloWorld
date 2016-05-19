@@ -7,10 +7,20 @@
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <annotation-driven />
     <context:component-scan base-package="gom.cave.sleep.helloWorld"/>
     <beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <beans:property name="prefix" value="/WEB-INF/views/"/>
         <beans:property name="suffix" value=".jsp"/>
+    </beans:bean>
+    <beans:bean class="org.springframework.web.servlet.mvc.support.ControllerBeanNameHandlerMapping"/>
+    <beans:bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
+    <beans:bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping" >
+        <beans:property name="mappings">
+            <beans:props>
+                <beans:prop key="/a/b/*">abc</beans:prop>
+            </beans:props>
+        </beans:property>
     </beans:bean>
 
 </beans:beans>
