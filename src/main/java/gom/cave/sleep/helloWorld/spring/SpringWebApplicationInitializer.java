@@ -15,7 +15,7 @@ public class SpringWebApplicationInitializer implements WebApplicationInitialize
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
         AnnotationConfigWebApplicationContext appContext = new AnnotationConfigWebApplicationContext();
-        appContext.scan("kr.ac.jejunu.spring");
+        appContext.scan("gom.cave.sleep.helloWorld");
         ServletRegistration.Dynamic registration = servletContext.addServlet("dispatcher", new DispatcherServlet(appContext));
         registration.setLoadOnStartup(1);
         registration.addMapping("/");
